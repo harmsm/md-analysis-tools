@@ -1,0 +1,6 @@
+Determine the orientation of the ligand as a series of moves: x, y, and z
+translation; yaw, pitch, roll.  This is done by aligning the backbone of the
+protein in each frame to a reference structure, the calculating the 
+transformation required to align the ligand in this frame to the ligand in the
+reference frame.  This requires the package "PrincipalAxes" which in turn
+requires "Orient" to run properly.  Both are available on the VMD website. 

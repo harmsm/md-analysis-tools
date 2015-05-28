@@ -1,0 +1,2 @@
+Create pdb files containing sets of frames from vmd trajectories.  These can
+then be viewed in pymol with timePlot.py.

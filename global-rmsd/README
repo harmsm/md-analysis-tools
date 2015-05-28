@@ -1,0 +1,2 @@
+Calculate the RMSD of CA carbons and ligand relative to the starting frame
+over the course of the trajectory.

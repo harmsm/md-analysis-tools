@@ -1,0 +1,5 @@
+Calculate the mean and sd perturbation x, y, and z for each residue in a 
+trajectory relative to the first frame in the trajecotry.  This shifts can
+also be applied to a pdb file using perturb-pdb.py.
+
+

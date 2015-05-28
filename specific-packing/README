@@ -1,0 +1,4 @@
+Record specific packing interactions between two selections as a function of
+cutoff distance.  Records solvent accessible surface area of both selections,
+then counts the number of atoms in each selection that are within 1.5-6.5 A
+of each other.

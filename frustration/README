@@ -1,0 +1,33 @@
+This is the set of scripts used to analyze protein/ligand interactions for 
+frustration.  It's complicated, but here is a brief overview:
+
+The main control script is run-master.sh.  This is the equivalent of your
+typical "run-me.sh" script, except it is able to run multiple vmd instances
+simultaneously.  (This is useful for running analyses on the cluster, which 
+has enough RAM to load three VMD sessions per node). To run this script, run:
+
+bash run-master.sh file_with_list_of_files script-to-run
+
+file_with_list_of_files contains a set of trajectories to analyze.  All of the
+entries on one line are started simultaneously.  If you put three entries per
+line, three analyses will run at once.  If you put one, one analysis, etc.  
+You have to specify which script to run.  You also have to specify the run 
+script.  Unfortunately, run-me_analysis.sh dies if you load more than one copy,
+so it has to be run as single rather than multiple jobs.  Confusing?  The point:
+when I run this analysis I run:
+ 
+bash run-master.sh run-list_triplet.txt run-me_vmd.sh 
+bash run-master.sh run-list_singlet.sh run-me_analysis.sh
+
+These vmd scripts analyze three aspects of the trajectory: the rotamer of 
+residue 41, hydrogen bonds made by residue 41, and water molecules bound. These
+data are combined and processed by combine-dihedral-hbond.py.  Settings for this
+script are at the top of the script; it takes no arguments.  So:
+
+python combine-dihedral-hbond.py
+
+This will populate the directory "trajectory-data".
+
+The script "frustration.R" can then be used to analyze all of this output.  As of
+this writing, that analysis is still in flux, so there is little documentation
+except in-line comments within the R script.

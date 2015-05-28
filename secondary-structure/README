@@ -1,0 +1,2 @@
+Calculate the secondary structure content of specified residues in a protein.  
+This uses STRIDE, VMD's internal secondary structure calculator.

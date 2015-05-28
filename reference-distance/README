@@ -1,0 +1,5 @@
+Calculate the distances between reference points on the protein over the course
+of a trajectory.  The reference points are specified at the top of 
+reference-distance.tcl and reference-distance.py (note that they have to match!).
+The default residues are shown in the reference-points directory by invoking
+show-points.pml with pymol
